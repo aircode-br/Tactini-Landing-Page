@@ -1,0 +1,16 @@
+/* index.css — mínimo, sem interferir no layout da app */
+:root {
+  /* se quiser manter apenas o antialias: */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* NADA de display:flex no body aqui */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* deixe o tema, containers, tipografia, etc. só no App.css */

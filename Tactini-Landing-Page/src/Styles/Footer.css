@@ -1,0 +1,42 @@
+/* Styles/Footer.css (Tema Claro) */
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-top: 0;
+  padding: 18px 0;
+  background: #f9fafb; /* Fundo cinza claro e sólido */
+  width: 100%;
+}
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-muted);
+}
+
+.footer-logo {
+  max-width: 50px;
+  opacity: .9;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--color-text);
+}
+

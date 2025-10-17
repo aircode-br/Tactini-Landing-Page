@@ -1,0 +1,149 @@
+/* ===== Services ===== */
+.services {
+    padding: 48px 0;
+}
+
+.services-carousel {
+    position: relative;
+    margin-top: 24px;
+}
+
+.services-carousel .viewport {
+    cursor: grab;
+    overflow: visible;
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.services-carousel .viewport:active {
+    cursor: grabbing;
+}
+
+.services-carousel .track {
+    display: flex;
+    will-change: transform;
+}
+
+/* ===== CARDS ===== */
+.services-carousel .card {
+    min-width: clamp(240px, 80vw, 340px);
+    max-width: 340px;
+    height: clamp(360px, 62vh, 520px);
+    flex: 0 0 auto;
+    padding: 28px 22px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--card-bg, #fafafa) 0%, var(--card-bg-end, #fafafa) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform 0.45s ease, opacity 0.45s ease;
+    transform-origin: center center;
+    pointer-events: none;
+}
+
+/* ===== NAV BUTTONS ===== */
+.services-carousel .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: var(--btn-bg, rgba(0, 0, 0, 0.08));
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.services-carousel .nav.prev {
+    left: 0;
+}
+
+.services-carousel .nav.next {
+    right: 0;
+}
+
+.services-carousel .nav:hover {
+    background: var(--btn-bg-hover, rgba(0, 0, 0, 0.12));
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ===== DOTS ===== */
+.dots-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+    gap: 4px;
+}
+
+.dots-wrap .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: 0;
+    margin: 6px;
+    opacity: 0.35;
+    background: currentColor;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dots-wrap .dot.active {
+    width: 32px;
+    opacity: 1;
+}
+
+.dots-wrap .dot:hover {
+    opacity: 0.6;
+}
+
+/* ===== TAG, TITLE, TEXT ===== */
+.services-carousel .tag {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-primary);
+    background: rgba(15, 68, 171, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    align-self: flex-start;
+}
+
+.services-carousel .card-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 6px 0;
+    color: var(--text-primary, #1a1a1a);
+    line-height: 1.2;
+}
+
+.services-carousel .card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary, #666);
+    flex: 1;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .services-carousel .nav {
+        display: none;
+    }
+    
+    .services-carousel .card {
+        min-width: clamp(280px, 85vw, 340px);
+        height: clamp(380px, 65vh, 480px);
+    }
+}

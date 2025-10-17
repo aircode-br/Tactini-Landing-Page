@@ -1,0 +1,144 @@
+/* Styles/Header.css (Tema Claro) */
+header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.7);
+    /* Fundo branco semi-transparente */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    /* Borda inferior escura */
+    width: 100%;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.brand img {
+    max-width: 80px;
+}
+
+.brand span {
+    letter-spacing: 0.3px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.links a {
+    color: var(--color-muted);
+    font-weight: 600;
+}
+
+.links a:hover {
+    color: var(--color-text);
+    /* Cor de texto principal no hover */
+}
+
+.menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.hamb,
+.hamb::before,
+.hamb::after {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background: var(--color-text);
+    /* Linhas do hambúrguer escuras */
+    display: block;
+    margin: 0 auto;
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.hamb::before,
+.hamb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamb::before {
+    top: -6px;
+}
+
+.hamb::after {
+    top: 6px;
+}
+
+.hamb.open {
+    background: transparent;
+}
+
+.hamb.open::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.hamb.open::after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.mobile-menu a {
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.mobile-menu .cta {
+    padding: 10px 16px;
+    border-radius: var(--radius);
+    background: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 900px) {
+    .links.desktop {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+}
+
